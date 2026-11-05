@@ -11,6 +11,7 @@ import ua.edu.flowershop.model.Bouquet;
 import ua.edu.flowershop.model.Flower;
 
 import java.util.List;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -47,7 +48,7 @@ public class BouquetServiceTest {
         double total = bouquetService.calculateTotalPrice(bouquet);
 
         // Перевірка
-        assertEquals(100.0, total, 0.001, "Вартість букета розрахована неправильно");
+        assertEquals(100.0, total, 0.001, "The cost of the bouquet has been calculated incorrectly");
     }
 
     @Test
@@ -62,5 +63,22 @@ public class BouquetServiceTest {
 
         assertEquals(1, result.size());
         assertEquals(mockFlower1, result.get(0));
+    }
+
+    @Test
+    void testSortFlowersByFreshness() {
+        // Налаштування мок-об'єктів для повернення різних рівнів свіжості
+        Mockito.when(mockFlower1.getFreshnessLevel()).thenReturn(5);
+        Mockito.when(mockFlower2.getFreshnessLevel()).thenReturn(10); // Свіжіша квітка
+
+        bouquet.addFlower(mockFlower1);
+        bouquet.addFlower(mockFlower2);
+
+        // Виконання сортування
+        bouquetService.sortFlowersByFreshness(bouquet);
+
+        // Перевірка, що mockFlower2 (свіжіша) стала першою в списку
+        assertEquals(mockFlower2, bouquet.getFlowers().get(0), "The freshest flower should be the first");
+        assertEquals(mockFlower1, bouquet.getFlowers().get(1));
     }
 }
