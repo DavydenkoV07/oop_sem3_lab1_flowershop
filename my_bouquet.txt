@@ -1,0 +1,14 @@
+====== YOUR BOUQUET ======
+
+-- Flowers:
+- Tulip (Price: 35.0, Stem Length: 45.0cm, Freshness: 10)
+- Rose (Price: 60.0, Stem Length: 70.0cm, Freshness: 9)
+- Chamomile (Price: 15.0, Stem Length: 40.0cm, Freshness: 8)
+- Carnation (Price: 25.0, Stem Length: 50.0cm, Freshness: 6)
+
+-- Accessories:
+- Craft Paper (Price: $30.0)
+- Satin Ribbon (Price: $15.0)
+
+Total Bouquet Price: $180.0
+==========================
