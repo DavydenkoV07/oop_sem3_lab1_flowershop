@@ -21,6 +21,6 @@ public abstract class Flower {
 
     @Override
     public String toString() {
-        return name + " (Ціна: " + price + ", Довжина: " + stemLength + "см, Свіжість: " + freshnessLevel + ")";
+        return name + " (Price: " + price + ", Stem Length: " + stemLength + "cm, Freshness: " + freshnessLevel + ")";
     }
 }
